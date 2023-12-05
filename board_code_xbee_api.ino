@@ -156,12 +156,12 @@ void loop()
                  String(',') + String('@');
   
   dtostrf(vrms, 7, 2, vrmsstr);
-  sprintf(yearstr,  "%u", year);
-  sprintf(monthstr,  "%u", month);
-  sprintf(daystr,  "%u", day);
-  sprintf(hourstr,  "%u", hour);
-  sprintf(minstr,  "%u", min);
-  sprintf(secstr,  "%u", sec);
+  sprintf(yearstr,  "%d", year);
+  sprintf(monthstr,  "%d", month);
+  sprintf(daystr,  "%d", day);
+  sprintf(hourstr,  "%d", hour);
+  sprintf(minstr,  "%d", min);
+  sprintf(secstr,  "%d", sec);
   payload[4] = vrmsstr[0];
   payload[5] = vrmsstr[1];
   payload[6] = vrmsstr[2];

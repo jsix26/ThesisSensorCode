@@ -55,13 +55,13 @@ unsigned long lastReport = 0;
 const long reportInterval = 1000;
 const long blinkInterval = 500;
 
-char vrmsstr[6];
-char yearstr[4];
-char monthstr[2];
-char daystr[2];
-char hourstr[2];
-char minstr[2];
-char secstr[2];
+char vrmsstr[7];
+char yearstr[5];
+char monthstr[3];
+char daystr[3];
+char hourstr[3];
+char minstr[3];
+char secstr[3];
 
 void setup()
 {

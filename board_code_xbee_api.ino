@@ -1,5 +1,4 @@
 #define ARM_MATH_CM0PLUS
-
 #include <XBee.h>
 #include <SPI.h>
 #include <Wire.h>

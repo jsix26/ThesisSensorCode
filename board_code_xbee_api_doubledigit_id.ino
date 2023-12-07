@@ -54,13 +54,13 @@ unsigned long lastReport = 0;
 const long reportInterval = 1000;
 const long blinkInterval = 500;
 
-char vrmsstr[6];
-char yearstr[4];
-char monthstr[2];
-char daystr[2];
-char hourstr[2];
-char minstr[2];
-char secstr[2];
+char vrmsstr[7];
+char yearstr[5];
+char monthstr[3];
+char daystr[3];
+char hourstr[3];
+char minstr[3];
+char secstr[3];
 
 void setup()
 {
@@ -155,12 +155,12 @@ void loop()
                  String(',') + String('@');
   
   dtostrf(vrms, 7, 2, vrmsstr);
-  sprintf(yearstr,  "%u", year);
-  sprintf(monthstr,  "%u", month);
-  sprintf(daystr,  "%u", day);
-  sprintf(hourstr,  "%u", hour);
-  sprintf(minstr,  "%u", min);
-  sprintf(secstr,  "%u", sec);
+  sprintf(yearstr,  "%d", year);
+  sprintf(monthstr,  "%d", month);
+  sprintf(daystr,  "%d", day);
+  sprintf(hourstr,  "%d", hour);
+  sprintf(minstr,  "%d", min);
+  sprintf(secstr,  "%d", sec);
   payload[5] = vrmsstr[0];
   payload[6] = vrmsstr[1];
   payload[7] = vrmsstr[2];

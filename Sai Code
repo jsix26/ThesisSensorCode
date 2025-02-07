@@ -2,7 +2,6 @@
 #include <XBee.h>
 #include <SPI.h>
 #include <Wire.h>
-#include <RV8523.h>
 
 #include <ADE9153A.h>
 #include <ADE9153AAPI.h>
@@ -15,10 +14,9 @@
 #define LED 6                   //On-board LED pin
 
 ADE9153AClass ade9153A;
-RV8523 RTC;
 
 XBee xbee = XBee();
-uint8_t payload[] = {'1', '3', ',', 0, 0, 0, 0, 0, 0, 0,};
+uint8_t payload[] = {'1', '4', ',', 0, 0, 0, 0, 0, 0, 0,};
 
 XBeeAddress64 addr64 = XBeeAddress64(0x0013A200, 0x421BE305);
 ZBTxRequest tx = ZBTxRequest(addr64, payload, sizeof(payload));

@@ -37,9 +37,6 @@ const long blinkInterval = 500;
 
 char vrmsstr[6];
 
-int mode = 1;
-int msdelay = 0;
-
 void setup()
 {
   cli();
@@ -102,8 +99,6 @@ void loop()
   payload[7] = vrmsstr[4];
   payload[8] = vrmsstr[5];
   payload[9] = vrmsstr[6];
-  
-  checkForIncomingData(); // Check for incoming data to update mode and msdelay
 
   if (vrms >= 210)
   {

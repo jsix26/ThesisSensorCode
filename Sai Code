@@ -107,25 +107,9 @@ void loop()
   
   checkForIncomingData(); // Check for incoming data to update mode and msdelay
 
-  if (vrms < 210)
+  if (vrms >= 210)
   {
-    digitalWrite(22, HIGH);
-    digitalWrite(4, HIGH);
-    digitalWrite(6, HIGH);
-    digitalWrite(30, HIGH);
-    digitalWrite(11, HIGH);
-    digitalWrite(9, HIGH);
-    digitalWrite(10, HIGH);
-    xbee.send(tx);
-    delay(30);
-    digitalWrite(22, HIGH);
-    digitalWrite(4, LOW);
-    delay(30);
     digitalWrite(22, LOW);
-  }
-  else
-  {
-    digitalWrite(22, HIGH);
     digitalWrite(12, LOW);
     digitalWrite(4, HIGH);
     digitalWrite(6, HIGH);
@@ -133,6 +117,43 @@ void loop()
     digitalWrite(11, HIGH);
     digitalWrite(9, HIGH);
     digitalWrite(10, HIGH);
+    delay(30);
+    digitalWrite(22, HIGH);
+    xbee.send(tx);
+    delay(30);
+
+  }
+  else if (vrms < 210)
+  {
+    digitalWrite(22, LOW);
+    digitalWrite(12, LOW);
+    digitalWrite(4, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(30, HIGH);
+    digitalWrite(11, HIGH);
+    digitalWrite(9, HIGH);
+    digitalWrite(10, HIGH);
+    delay(30);
+    digitalWrite(12, HIGH);
+    xbee.send(tx);
+    delay(30);
+
+  }
+  else
+  {
+    digitalWrite(22, LOW);
+    digitalWrite(12, LOW);
+    digitalWrite(4, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(30, HIGH);
+    digitalWrite(11, HIGH);
+    digitalWrite(9, HIGH);
+    digitalWrite(10, HIGH);
+    delay(30);
+    digitalWrite(4, LOW);
+    xbee.send(tx);
+    delay(30);
+
   }
 }
 
